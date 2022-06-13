@@ -25,15 +25,16 @@ into a REPL.
 ## What Is `ipdb`?
 
 `ipdb` is another Python REPL with some added functionality. It is built on
-top of `pdb`, a REPL in Python's standard library, and provides helpful features such as
-tab completion, syntax highlighting, and better tracebacks. When you enter
+top of `pdb`, a REPL in Python's standard library, and provides helpful features
+such as tab completion, syntax highlighting, and better tracebacks. When you enter
 `ipdb`, youare entering a brand new interactive environment. For any code you
 want to play with in the Python shell, you have to copy and paste or write your
 code in the PYthon shell itself. ipdb, on the other hand, is like a REPL that
 you can inject into your program.
 
-ipdb is far more flexible than the Python shell. Once you install the ipdb library (via this
-lesson's `Pipfile`), you can use `ipdb.set_trace()` anywhere in your code.
+ipdb is far more flexible than the Python shell. Once you install the ipdb
+library (via this lesson's `Pipfile`), you can use `ipdb.set_trace()` anywhere
+in your code.
 
 `ipdb.set_trace()` gives you similar functionality to using `debugger` in a
 JavaScript application, in that it lets you set a **breakpoint** in your code
@@ -157,81 +158,93 @@ In `ipdb_debugging.py`, we have a broken function. Run `pytest` to see the
 failing test. You should see the following:
 
 ```txt
-  1) #plus_two takes in a number as an argument and returns the sum of that number and 2
-     Failure/Error: expect(plus_two(3)).to eq(5)
+=== test session starts ===
+platform darwin -- Python 3.8.13, pytest-7.1.2, pluggy-1.0.0
+rootdir: /
+collected 1 item
 
-       expected: 5
-            got: 3
+ipdb_debugging.py adds_two() adds 2 to input arg and returns sum F                                                                                                                                                                                                       [100%]
 
-       (compared using ==)
-     # ./spec/pry_debugging_spec.rb:6:in `block (2 levels) in <top (required)>'
+=== FAILURES ===
+___ TestIpdbDebugging.test_adds_two ___
+
+self = <testing.ipdb_debugging_test.TestIpdbDebugging object at 0x105862fa0>
+
+    def test_adds_two(self):
+        '''adds_two() adds 2 to input arg and returns sum'''
+>       assert(plus_two(3) == 5)
+E       assert 3 == 5
+E        +  where 3 = plus_two(3)
+
+testing/ipdb_debugging_test.py:10: AssertionError
+=== short test summary info ===
+FAILED ipdb_debugging.py adds_two() adds 2 to input arg and returns sum - assert 3 == 5
+=== 1 failed in 0.04s ===
 ```
 
-So what's happening? In the second line (the line starting with
-`Failure/Error`), we can see that the test is calling the `plus_two` function and
-passing in `3` as an argument. Below that we can see that the test is expecting
-`5` to be returned, but that `3` is being returned instead. Remember that the
-return value of a function in Ruby is generally the value of the last line of the
-function, in this case, `num`:
+So what's happening? In our `FAILURES` section, we can see that the test is
+calling the `plus_two` function and passing in `3` as an argument. Below that
+we can see that the test is expecting `5` to be returned, but that `3` is being
+returned instead. Let's take another look at the code in `ipdb_debugging.py`:
 
-```ruby
-def plus_two(num)
+```py
+def plus_two(num):
     num + 2
-    num
-end
+    return num
 ```
 
-So while our function is adding 2 to `num` on the second line, it appears that it
-is not _updating_ `num`. We have Pry required at the top of our
-`spec/pry_debugging_spec.rb` file so we can use it to verify this. Let's place a
-`ipdb.set_trace()` in our code, right after that line:
+So while our function is adding 2 to `num` in the first line of our function,
+it appears that it is not _updating_ `num`. We have imported `ipdb` at the top
+of our `testing/ipdb_debugging_test.py` file so we can use it to verify this.
+Let's place an `ipdb.set_trace()` in our code, right after that line:
 
-```ruby
-def plus_two(num)
+```py
+def plus_two(num):
     num + 2
     ipdb.set_trace()
-    num
-end
+    return num
 ```
 
-Now, run the test suite again and drop into your Pry console. Your terminal
-should look like this:
+Now, run [`pytest -s`](https://docs.pytest.org/en/latest/how-to/capture-stdout-stderr.html#setting-capturing-methods-or-disabling-capturing)
+(the `-s` allows us to see and interact with our code's output during testing)
+and drop into your `ipdb` console. Your terminal should look like this:
 
 ```txt
-    1: def plus_two(num)
-    2:  num + 2
-    3:  ipdb.set_trace()
- => 4:  num
-    5: end
+ipdb_debugging.py adds_two() adds 2 to input arg and returns sum > /lib/ipdb_debugging.py(8)plus_two()
+      6     num + 2
+      7     ipdb.set_trace()
+----> 8     return num
 
-[1] pry(#<RSpec::ExampleGroups::PlusTwo>)>
+ipdb>
 ```
 
-Let's check our current return value by typing `num` at the Pry prompt. You
+Let's check our current return value by typing `num` at the `ipdb` prompt. You
 should see something like this:
 
 ```txt
-[1] pry(#<RSpec::ExampleGroups::PlusTwo>)> num
-=> 3
-[2] pry(#<RSpec::ExampleGroups::PlusTwo>)>
+ipdb> num
+3
+ipdb>
 ```
 
 By checking the value of the variable inside our pry console, we can confirm
-that `num` is still equal to `3` and, as a result, the function is returning `3`.
+that `num` is still equal to `3` and, as a result, the function is returning
+`3`.
 
-How can we modify the code on line 2 so that the function behaves in the expected
+How can we modify the code so that the function behaves in the expected
 way? We need to _update_ the value of our `num` variable so that it's equal to
-the sum of itself and 2. Play around inside your Pry console: try code that you
-think will update `num` as needed, then check the value of `num` to see if it
-worked. Once you figure it out you can type `exit` in your terminal to get out
-of Pry, update the code in your text editor, and rerun the test to verify it's
-passing. Be sure to remove the `ipdb.set_trace()`!
+the sum of itself and 2. Play around inside your `ipdb` console: try code that
+you think will update `num` as needed, then check the value of `num` to see if
+it worked. Once you figure it out you can type `exit` in your terminal to get
+out of `ipdb`, update the code in your text editor, and rerun the test to verify
+it's passing. Be sure to remove the `ipdb.set_trace()`!
 
-It can take a little while to get the hang of using Pry, so don't worry if it's
-still a little confusing. As you start working with more complex functions and
-data structures, you'll find it can be a very helpful tool.
+It can take a little while to get the hang of using `ipdb`, so don't worry if
+it's still a little confusing. As you start working with more complex functions
+and data structures, you'll find it can be a very helpful tool.
 
 ## Resources
 
 - [ipdb documentation](https://pypi.org/project/ipdb/)
 - [Python Debugging with PDB](https://realpython.com/python-debugging-pdb/)
+- [Capturing output with pytest](https://docs.pytest.org/en/latest/how-to/capture-stdout-stderr.html#setting-capturing-methods-or-disabling-capturing)
