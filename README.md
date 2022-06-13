@@ -1,9 +1,9 @@
-# Debugging with `ipdb`
+# Debugging with ipdb
 
 ## Learning Goals
 
-- Explain how Pry is a more flexible REPL than IRB.
-- Install Pry on your computer
+- Explain how `ipdb` is a more flexible REPL than the Python shell.
+- Install `ipdb` via Pipfile
 - Debug a program using `binding.pry` within the body of your file
 
 ## Introduction
