@@ -119,36 +119,41 @@ and hit enter. You should see a return value of `"We're inside the function"`
 
 ```txt
 ipdb> inside_the_function
+"We're inside the function!"
 ```
 
 You are able to explore the data _inside_ the function in which you've placed your
 binding. Any variables or functions that are available from the line you placed
 your `ipdb.set_trace()` will be available to you to explore from the terminal.
 
+> NOTE: Any names that have been assigned to variables (or functions, methods
+> classes, etc.) can be auto-completed by hitting `tab`. If your name doesn't
+> autocomplete, it hasn't been defined yet!
+
 Now, in the terminal, in your pry console, type the variable name
-`this_variable_hasnt_been_interpreted_yet`. You should see a return value of
-`nil`. That's because the binding you placed on line 7 actually froze the
-program on line 7 and the variable you just called hasn't been interpreted yet.
+`this_variable_hasnt_been_interpreted_yet`. You should see a `SyntaxError`.
+That's because the binding you placed on line 7 actually froze the program on
+line 7 and the variable you just called hasn't been interpreted yet.
 Consequently, our REPL doesn't know about it.
 
-Now, in the terminal, type `exit`, and you'll leave your pry console and the
-program will continue to execute.
+Now, in the terminal, type `c` (for **continue**), and you'll leave your `ipdb`
+console and the program will continue to execute.
 
-## Using Pry to Debug
+## Using `ipdb` to Debug
 
-In addition to _exploring_ code inside Pry, you can also manipulate variables
-and try code out. This is where Pry really becomes helpful for debugging. If you
-have a function that isn't doing what it's supposed to do, instead of making
+In addition to _exploring_ code inside `ipdb`, you can also manipulate variables
+and try code out. This is where `ipdb` really becomes helpful for debugging. If
+you have a function that isn't doing what it's supposed to do, instead of making
 changes in your text editor and running the tests over and over until you get it
 working, you can put a binding in your code and try things out. Once you've
 figured out how to fix the problem, you then update the code in your text editor
 accordingly.
 
-Let's walk through an example together. In this repository, you'll see a `spec`
-folder containing a file `pry_debugging_spec.rb`. This is a test for the file
-`lib/pry_debugging.rb`.
+Let's walk through an example together. In this repository, you'll see a
+`testing`n folder containing a file `ipdb_debugging_test.py`. This is a test
+for the file `lib/ipdb_debugging.py`.
 
-In `pry_debugging.rb`, we have a broken function. Run `learn test` to see the
+In `ipdb_debugging.py`, we have a broken function. Run `pytest` to see the
 failing test. You should see the following:
 
 ```txt
