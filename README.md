@@ -158,13 +158,6 @@ In `ipdb_debugging.py`, we have a broken function. Run `pytest` to see the
 failing test. You should see the following:
 
 ```txt
-=== test session starts ===
-platform darwin -- Python 3.8.13, pytest-7.1.2, pluggy-1.0.0
-rootdir: /
-collected 1 item
-
-ipdb_debugging.py adds_two() adds 2 to input arg and returns sum F                                                                                                                                                                                                       [100%]
-
 === FAILURES ===
 ___ TestIpdbDebugging.test_adds_two ___
 
