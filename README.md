@@ -4,33 +4,34 @@
 
 - Explain how `ipdb` is a more flexible REPL than the Python shell.
 - Install `ipdb` via Pipfile
-- Debug a program using `binding.pry` within the body of your file
+- Debug a program using `ipdb.set_trace()` within the body of your file
 
 ## Introduction
 
-We'll cover Pry, a type of REPL, and discuss how to install and use it to debug
+We'll cover `ipdb`, a type of REPL, and discuss how to install and use it to debug
 a program.
 
 ## What Is a REPL?
 
-You've already been introduced to REPLs through using IRB (Interactive Ruby).
-REPL stands for _Read, Evaluate, Print, Loop_. It is an interactive programming
+You've already been introduced to REPLs through using the Python Shell. REPL
+stands for _Read, Evaluate, Print, Loop_. It is an interactive programming
 environment that takes a user's input, evaluates it and returns the result to
 the user.
 
-Ruby installs with its own REPL, which is IRB, that you've already been using.
-Every time you type `irb` into your terminal, you're entering into a REPL.
+Python installs with its own REPL, which is the Python shell that you've already
+been using. Every time you type `python` into your terminal, you're entering
+into a REPL.
 
-## What Is Pry?
+## What Is ipdb?
 
-Pry is another Ruby REPL with some added functionality. When you enter IRB, you
-are entering a brand new interactive environment. Any code you want to play with
-in IRB, you have to write in IRB or copy and paste into IRB. Pry, on the other
-hand, is like a REPL that you can inject into your program.
+`ipdb` is another Python REPL with some added functionality. When you enter
+`ipdb`, youare entering a brand new interactive environment. For any code you
+want to play with in the Python shell, you have to copy and paste or write your
+code in the PYthon shell itself. ipdb, on the other hand, is like a REPL that
+you can inject into your program.
 
-Pry is far more flexible than IRB. Once you install the Pry library (via the Pry
-gem—we'll walk through installation in a bit), you can use a `binding.pry`
-anywhere in your code.
+ipdb is far more flexible than IRB. Once you install the ipdb library (via this
+lesson's `Pipfile`), you can use `ipdb.set_trace()` anywhere in your code.
 
 ## Wait... What's 'binding'?
 
