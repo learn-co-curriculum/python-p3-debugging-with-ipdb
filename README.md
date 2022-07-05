@@ -3,13 +3,36 @@
 ## Learning Goals
 
 - Explain how `ipdb` is a more flexible REPL than the Python shell.
-- Install `ipdb` via Pipfile
-- Debug a program using `ipdb.set_trace()` within the body of your file
+- Install `ipdb` via Pipfile.
+- Debug a program using `ipdb.set_trace()` within the body of your file.
+
+***
+
+## Key Vocab
+
+- **Interpreter**: a program that executes other programs. Python programs
+require the Python interpreter to be installed on your computer so that they
+can be run.
+- **Python Shell**: an interactive interpreter that can be accessed from the
+command line.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+causing a program to crash.
+- **Code Block**: a collection of code that is interpreted together. Python
+groups code blocks by indentation level.
+- **Function**: a named code block that performs a sequence of actions when it
+is called.
+- **Scope**: the area in your program where a specific variable can be called.
+
+***
 
 ## Introduction
 
 We'll cover `ipdb`, a type of REPL, and discuss how to install and use it to debug
 a program.
+
+***
 
 ## What Is a REPL?
 
@@ -21,6 +44,8 @@ the user.
 Python installs with its own REPL, which is the Python shell that you've already
 been using. Every time you type `python` into your terminal, you're entering
 into a REPL.
+
+***
 
 ## What Is `ipdb`?
 
@@ -50,6 +75,8 @@ a REPL that exists right in the middle of your program, wherever you added the
 
 Let's take a look. In this repository, you'll see a file called
 `ipdb_is_awesome.py`.
+
+***
 
 ## Using `ipdb.set_trace()`
 
@@ -139,6 +166,8 @@ Consequently, our REPL doesn't know about it.
 
 Now, in the terminal, type `c` (for **continue**), and you'll leave your `ipdb`
 console and the program will continue to execute.
+
+***
 
 ## Using `ipdb` to Debug
 
@@ -235,6 +264,8 @@ it's passing. Be sure to remove the `ipdb.set_trace()`!
 It can take a little while to get the hang of using `ipdb`, so don't worry if
 it's still a little confusing. As you start working with more complex functions
 and data structures, you'll find it can be a very helpful tool.
+
+***
 
 ## Resources
 
