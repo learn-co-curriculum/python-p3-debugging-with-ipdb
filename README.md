@@ -54,7 +54,7 @@ top of `pdb`, a REPL in Python's standard library, and provides helpful features
 such as tab completion, syntax highlighting, and better tracebacks. When you enter
 `ipdb`, youare entering a brand new interactive environment. For any code you
 want to play with in the Python shell, you have to copy and paste or write your
-code in the PYthon shell itself. ipdb, on the other hand, is like a REPL that
+code in the Python shell itself. ipdb, on the other hand, is like a REPL that
 you can inject into your program.
 
 ipdb is far more flexible than the Python shell. Once you install the ipdb
