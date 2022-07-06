@@ -142,8 +142,9 @@ ipdb>
 You have frozen your program _as it executes_ and are now inside a REPL _inside
 your program_. You basically just stopped time! How cool is that?
 
-In the terminal, in your pry console, type the variable name `inside_the_function`
-and hit enter. You should see a return value of `"We're inside the function"`
+In the terminal, in your ipdb console, type the variable name
+`inside_the_function` and hit enter. You should see a return value of
+`"We're inside the function"`.
 
 ```txt
 ipdb> inside_the_function
@@ -158,7 +159,7 @@ your `ipdb.set_trace()` will be available to you to explore from the terminal.
 > classes, etc.) can be auto-completed by hitting `tab`. If your name doesn't
 > autocomplete, it hasn't been defined yet!
 
-Now, in the terminal, in your pry console, type the variable name
+Now, in the terminal, in your ipdb console, type the variable name
 `this_variable_hasnt_been_interpreted_yet`. You should see a `SyntaxError`.
 That's because the binding you placed on line 7 actually froze the program on
 line 7 and the variable you just called hasn't been interpreted yet.
@@ -249,7 +250,7 @@ ipdb> num
 ipdb>
 ```
 
-By checking the value of the variable inside our pry console, we can confirm
+By checking the value of the variable inside our ipdb console, we can confirm
 that `num` is still equal to `3` and, as a result, the function is returning
 `3`.
 
