@@ -41,21 +41,21 @@ stands for _Read, Evaluate, Print, Loop_. It is an interactive programming
 environment that takes a user's input, evaluates it and returns the result to
 the user.
 
-Python installs with its own REPL, which is the Python shell that you've already
-been using. Every time you type `python` into your terminal, you're entering
-into a REPL.
+Python installs with its own REPL, which is the Python shell that you've
+already been using. Every time you type `python` into your terminal, you're
+entering into a REPL.
 
 ---
 
 ## What Is `ipdb`?
 
-`ipdb` is another Python REPL with some added functionality. It is built on top
-of `pdb`, a REPL in Python's standard library, and provides helpful features
-such as tab completion, syntax highlighting, and better tracebacks. When you
-enter `ipdb`, youare entering a brand new interactive environment. For any code
-you want to play with in the Python shell, you have to copy and paste or write
-your code in the Python shell itself. ipdb, on the other hand, is like a REPL
-that you can inject into your program.
+`ipdb` is another Python REPL with some added functionality. It is built on
+top of `pdb`, a REPL in Python's standard library, and provides helpful features
+such as tab completion, syntax highlighting, and better tracebacks. When you enter
+`ipdb`, you are entering a brand new interactive environment. For any code you
+want to play with in the Python shell, you have to copy and paste or write your
+code in the Python shell itself. ipdb, on the other hand, is like a REPL that
+you can inject into your program.
 
 ipdb is far more flexible than the Python shell. Once you install the ipdb
 library (via this lesson's `Pipfile`), you can use `ipdb.set_trace()` anywhere
@@ -182,8 +182,8 @@ figured out how to fix the problem, you then update the code in your text editor
 accordingly.
 
 Let's walk through an example together. In this repository, you'll see a
-`testing`n folder containing a file `ipdb_debugging_test.py`. This is a test for
-the file `lib/ipdb_debugging.py`.
+`testing` folder containing a file `ipdb_debugging_test.py`. This is a test
+for the file `lib/ipdb_debugging.py`.
 
 In `ipdb_debugging.py`, we have a broken function. Run `pytest` to see the
 failing test. You should see the following:
