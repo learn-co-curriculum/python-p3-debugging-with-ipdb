@@ -29,8 +29,8 @@ is called.
 
 ## Introduction
 
-We'll cover `ipdb`, a type of REPL, and discuss how to install and use it to debug
-a program.
+We'll cover `ipdb`, a type of REPL, and discuss how to install and use it to
+debug a program.
 
 ***
 
@@ -41,9 +41,9 @@ stands for _Read, Evaluate, Print, Loop_. It is an interactive programming
 environment that takes a user's input, evaluates it and returns the result to
 the user.
 
-Python installs with its own REPL, which is the Python shell that you've already
-been using. Every time you type `python` into your terminal, you're entering
-into a REPL.
+Python installs with its own REPL, which is the Python shell that you've
+already been using. Every time you type `python` into your terminal, you're
+entering into a REPL.
 
 ***
 
@@ -52,7 +52,7 @@ into a REPL.
 `ipdb` is another Python REPL with some added functionality. It is built on
 top of `pdb`, a REPL in Python's standard library, and provides helpful features
 such as tab completion, syntax highlighting, and better tracebacks. When you enter
-`ipdb`, youare entering a brand new interactive environment. For any code you
+`ipdb`, you are entering a brand new interactive environment. For any code you
 want to play with in the Python shell, you have to copy and paste or write your
 code in the Python shell itself. ipdb, on the other hand, is like a REPL that
 you can inject into your program.
@@ -181,7 +181,7 @@ figured out how to fix the problem, you then update the code in your text editor
 accordingly.
 
 Let's walk through an example together. In this repository, you'll see a
-`testing`n folder containing a file `ipdb_debugging_test.py`. This is a test
+`testing` folder containing a file `ipdb_debugging_test.py`. This is a test
 for the file `lib/ipdb_debugging.py`.
 
 In `ipdb_debugging.py`, we have a broken function. Run `pytest` to see the
@@ -259,8 +259,8 @@ way? We need to _update_ the value of our `num` variable so that it's equal to
 the sum of itself and 2. Play around inside your `ipdb` console: try code that
 you think will update `num` as needed, then check the value of `num` to see if
 it worked. Once you figure it out you can type `exit` in your terminal to get
-out of `ipdb`, update the code in your text editor, and rerun the test to verify
-it's passing. Be sure to remove the `ipdb.set_trace()`!
+out of `ipdb`, update the code in your text editor, and rerun the test to
+verify it's passing. Be sure to remove the `ipdb.set_trace()`!
 
 It can take a little while to get the hang of using `ipdb`, so don't worry if
 it's still a little confusing. As you start working with more complex functions
