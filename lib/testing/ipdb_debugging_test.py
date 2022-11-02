@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from lib.ipdb_debugging import plus_two
+from ipdb_debugging import plus_two
 
 class TestIpdbDebugging:
     '''ipdb_debugging.py'''
