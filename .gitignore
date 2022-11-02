@@ -1,2 +1,2 @@
-.pytest_cache/*
-.venv/*
+.pytest_cache
+.venv
