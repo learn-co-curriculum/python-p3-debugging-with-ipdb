@@ -10,19 +10,24 @@
 
 ## Key Vocab
 
+- **Code Block**: a collection of code that is interpreted together. Python
+  groups code blocks by indentation level.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+  types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+  causing a program to crash.
+- **Function**: a named code block that performs a sequence of actions when it
+  is called.
 - **Interpreter**: a program that executes other programs. Python programs
   require the Python interpreter to be installed on your computer so that they
   can be run.
 - **Python Shell**: an interactive interpreter that can be accessed from the
   command line.
-- **Data Type**: a specific kind of data. The Python interpreter uses these
-  types to determine which actions can be performed on different data items.
-- **Exception**: a type of error that can be predicted and handled without
-  causing a program to crash.
-- **Code Block**: a collection of code that is interpreted together. Python
-  groups code blocks by indentation level.
-- **Function**: a named code block that performs a sequence of actions when it
-  is called.
+- **REPL (Read-Eval-Print Loop)**: A REPL (Read-Eval-Print Loop) is a special
+  tool for programming where you can type in code and see what happens right
+  away. It's like having a conversation with the computer. You say something 
+  (type in code), the computer understands it and does what you asked, and then
+  it shows you the result.
 - **Scope**: the area in your program where a specific variable can be called.
 
 ---
