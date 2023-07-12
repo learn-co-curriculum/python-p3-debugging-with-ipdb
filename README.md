@@ -96,7 +96,7 @@ including `ipdb`.
 > > pip install ipdb
 > ```
 
-Look at the code in `lib/ipdb_is_awesome.rb`. You should see the following code:
+Look at the code in `lib/ipdb_is_awesome.py`. You should see the following code:
 
 ```py
 import ipdb
