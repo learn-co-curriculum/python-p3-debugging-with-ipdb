@@ -10,19 +10,24 @@
 
 ## Key Vocab
 
+- **Code Block**: a collection of code that is interpreted together. Python
+  groups code blocks by indentation level.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+  types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+  causing a program to crash.
+- **Function**: a named code block that performs a sequence of actions when it
+  is called.
 - **Interpreter**: a program that executes other programs. Python programs
   require the Python interpreter to be installed on your computer so that they
   can be run.
 - **Python Shell**: an interactive interpreter that can be accessed from the
   command line.
-- **Data Type**: a specific kind of data. The Python interpreter uses these
-  types to determine which actions can be performed on different data items.
-- **Exception**: a type of error that can be predicted and handled without
-  causing a program to crash.
-- **Code Block**: a collection of code that is interpreted together. Python
-  groups code blocks by indentation level.
-- **Function**: a named code block that performs a sequence of actions when it
-  is called.
+- **REPL (Read-Eval-Print Loop)**: A REPL (Read-Eval-Print Loop) is a special
+  tool for programming where you can type in code and see what happens right
+  away. It's like having a conversation with the computer. You say something 
+  (type in code), the computer understands it and does what you asked, and then
+  it shows you the result.
 - **Scope**: the area in your program where a specific variable can be called.
 
 ---
@@ -54,10 +59,10 @@ top of `pdb`, a REPL in Python's standard library, and provides helpful features
 such as tab completion, syntax highlighting, and better tracebacks. When you enter
 `ipdb`, you are entering a brand new interactive environment. For any code you
 want to play with in the Python shell, you have to copy and paste or write your
-code in the Python shell itself. ipdb, on the other hand, is like a REPL that
+code in the Python shell itself. `ipdb`, on the other hand, is like a REPL that
 you can inject into your program.
 
-ipdb is far more flexible than the Python shell. Once you install the ipdb
+`ipdb` is far more flexible than the Python shell. Once you install the `ipdb`
 library (via this lesson's `Pipfile`), you can use `ipdb.set_trace()` anywhere
 in your code.
 
@@ -120,7 +125,7 @@ statements in JavaScript.
 > We will elaborate on Python `import` statements later in Phase 3, but note now
 > that Python `import` statements **do not** use quotes or semicolons.
 
-After importing `ipdb`, _which you must do to use ipdb_, we define a function,
+After importing `ipdb`, _which you must do to use `ipdb`_, we define a function,
 and then call that function.
 
 In the directory of this repo, in your terminal, run the file by typing
@@ -142,7 +147,7 @@ ipdb>
 You have frozen your program _as it executes_ and are now inside a REPL _inside
 your program_. You basically just stopped time! How cool is that?
 
-In the terminal, in your ipdb console, type the variable name
+In the terminal, in your `ipdb` console, type the variable name
 `inside_the_function` and hit enter. You should see a return value of
 `"We're inside the function"`.
 
@@ -160,7 +165,7 @@ terminal.
 > classes, etc.) can be auto-completed by hitting `tab`. If your name doesn't
 > autocomplete, it hasn't been defined yet!
 
-Now, in the terminal, in your ipdb console, type the variable name
+Now, in the terminal, in your `ipdb` console, type the variable name
 `this_variable_hasnt_been_interpreted_yet`. You should see a `NameError`. That's
 because the binding you placed on line 7 actually froze the program on line 7
 and the variable you just called hasn't been interpreted yet. Consequently, our
