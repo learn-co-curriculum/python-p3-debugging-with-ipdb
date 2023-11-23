@@ -1,4 +1,4 @@
+import ipdb
 def plus_two(num):
-    num = num + 2
-    print(num)
-    return num
+    return num + 2
+ipdb.set_trace()
